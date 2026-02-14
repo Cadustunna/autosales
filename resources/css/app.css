@@ -1,0 +1,64 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Target the actual input elements inside Flux components */
+label{
+    color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background-color: #ffffff !important;
+    border-color: #eb4141 !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #eb4141 !important;
+    outline: none !important;
+    --tw-ring-color: #f91616cf !important;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2) !important;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    border-color: #eb4141 !important;
+    color: #f91616cf !important; /* Checkmark color */
+}
+
+input[type="checkbox"]:checked {
+    background-color: #f91616cf !important;
+    border-color: #eb4141 !important;
+}
+
+input[type="checkbox"]:focus {
+    --tw-ring-color: #f91616cf !important;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2) !important;
+}
+
+/* Checkbox label */
+label {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+/* Target the actual button element */
+button[type="submit"] {
+    background-color: #f91616cf !important;
+    color: white !important;
+    border-color: #eb4141 !important;
+}
+
+button[type="submit"]:hover {
+    background-color: #7b0808c8 !important;
+}
+
+/* If button has dark mode styles, override them too */
+button[type="submit"]:is(.dark *) {
+    background-color: #f91616cf !important;
+}
+
