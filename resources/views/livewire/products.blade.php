@@ -90,7 +90,7 @@
     </div>
     <div>
         <h1 class="text-7xl font-bold text-center text-uppercase m-3">
-            This is Terms & privacy page
+            This is Products page
         </h1>
     </div>
 </div>

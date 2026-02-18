@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            // ->authGuard('filament') // VERY IMPORTANT
+            ->authGuard('admin') // VERY IMPORTANT
             ->login()
             ->colors([
                 'primary' => Color::Amber,

@@ -17,15 +17,15 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                           d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                 </svg>
-            </button> 
+            </button>
 
             <!-- Desktop navigation -->
             <div class="hidden md:flex items-center space-x-4">
                 <a wire:navigate href="{{ route('welcome') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline focus-visible:text-red-500">Home</a>
-                <a wire:navigate href="{{ route('about-us') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">About</a>
+                <a wire:navigate href="{{ route('about-us') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">About Us</a>
+                <a wire:navigate href="{{ route('products') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">Products</a>
                 <a wire:navigate href="{{ route('services') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">Services</a>
-                <a wire:navigate href="{{ route('Terms&privacy') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">Terms</a>
-                <a wire:navigate href="{{ route('inquiries') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">Inquiries</a>
+                <a wire:navigate href="{{ route('inquiries') }}" class="font-bold text-red-700 hover:text-red-500 hover:underline">Contact Us</a>
 
                 <!-- Account dropdown -->
                 @auth
@@ -54,7 +54,7 @@
                             class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50"
                         >
                             <li>
-                                <a href="my_cars.html"
+                                <a href="{{ route('my_cars') }}"
                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                     My Cars
                                 </a>
@@ -116,8 +116,8 @@
 
             <a wire:navigate href="{{ route('welcome') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">Home</a>
             <a wire:navigate href="{{ route('about-us') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">About</a>
+            <a wire:navigate href="{{ route('products') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">Products</a>
             <a wire:navigate href="{{ route('services') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">Services</a>
-            <a wire:navigate href="{{ route('Terms&privacy') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">Terms</a>
             <a wire:navigate href="{{ route('inquiries') }}" class="block px-4 py-2 font-bold text-red-700 hover:bg-gray-100">Inquiries</a>
 
             @auth

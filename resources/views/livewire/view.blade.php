@@ -1,5 +1,9 @@
-<div>
+{{-- Add at the top of your view file --}}
+@push('scripts')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@endpush
 
+<div>
     <main class="bg-gray-50 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             @foreach ($car_details as $data)
@@ -8,23 +12,6 @@
                     {{ $data->title }} - {{ $data->year }}
                 </h1>
 
-                <!-- Add this at the very top of your view temporarily -->
-@php
-    $debugImage = $data->images->first();
-    if($debugImage) {
-        $imagePath = $debugImage->image_path;
-        $fullPath = storage_path('app/public/' . $imagePath);
-        $publicPath = public_path('storage/' . $imagePath);
-
-        echo "<!-- DEBUG INFO -->";
-        echo "<!-- Image Path from DB: " . $imagePath . " -->";
-        echo "<!-- Storage Path: " . $fullPath . " -->";
-        echo "<!-- File Exists in Storage: " . (file_exists($fullPath) ? 'YES' : 'NO') . " -->";
-        echo "<!-- Public Path: " . $publicPath . " -->";
-        echo "<!-- File Exists in Public: " . (file_exists($publicPath) ? 'YES' : 'NO') . " -->";
-        echo "<!-- Asset URL: " . asset('storage/' . $imagePath) . " -->";
-    }
-@endphp
                 <div class="text-sm text-gray-500 mb-6">
                     {{ $data->location }} - {{ $data->created_at->diffForHumans() }}
                 </div>
@@ -35,10 +22,10 @@
                     <div class="lg:col-span-2 space-y-6">
                         <!-- Image Carousel with Alpine.js -->
                         <div class="bg-white rounded-lg shadow-md overflow-hidden"
-                             x-data="{
-                                 currentImage: 0,
-                                 images: {{ json_encode($data->images->pluck('image_path')->values()) }}
-                             }">
+                            x-data="{
+                                currentImage: 0,
+                                images: {{ json_encode($data->images->pluck('image_path')->values()) }}
+                            }">
                             <div class="relative">
                                 <!-- Main Image -->
                                 <div class="aspect-video bg-gray-200">

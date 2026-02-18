@@ -11,18 +11,18 @@
                 </address>
                 <ul class="space-y-2">
                     <li>
-                        <a href="tel://11234567890" class="text-gray-400 hover:text-white transition">
-                            +1(123)-456-7890
+                        <a wire:navigate href="tel://2348025751498" class="text-gray-400 hover:text-white transition">
+                            +(234)-802-5751498
                         </a>
                     </li>
                     <li>
-                        <a href="tel://11234567890" class="text-gray-400 hover:text-white transition">
-                            +1(123)-456-7890
+                        <a href="tel://2348025751498" class="text-gray-400 hover:text-white transition">
+                            +(234)-802-5751498
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:info@mydomain.com" class="text-gray-400 hover:text-white transition">
-                            info@mydomain.com
+                        <a wire:navigate href="mailto:info@mydomain.com" class="text-gray-400 hover:text-white transition">
+                            fadumeta@outlook.com
                         </a>
                     </li>
                 </ul>
@@ -33,27 +33,27 @@
                 <h3 class="text-white text-lg font-semibold mb-4">Sources</h3>
                 <ul class="space-y-2">
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            About us
+                        <a wire:navigate href="{{ route('about-us') }}" class="text-gray-400 hover:text-white transition">
+                            About Us
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
+                        <a wire:navigate href="{{ route('products') }}" class="text-gray-400 hover:text-white transition">
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a wire:navigate href="{{ route('services') }}" class="text-gray-400 hover:text-white transition">
                             Services
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            Contact us
+                        <a wire:navigate href="{{ route('inquiries') }}" class="text-gray-400 hover:text-white transition">
+                            Contact Us
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            Terms
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
+                        <a wire:navigate href="#" class="text-gray-400 hover:text-white transition">
                             Privacy
                         </a>
                     </li>
@@ -65,18 +65,18 @@
                 <h3 class="text-white text-lg font-semibold mb-4">Links</h3>
                 <ul class="space-y-2 mb-6">
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
+                        <a wire:navigate href="{{ route('about-us') }}" class="text-gray-400 hover:text-white transition">
                             Our Vision
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            About us
+                        <a wire:navigate href="{{ route('about-us') }}" class="text-gray-400 hover:text-white transition">
+                            About Us
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            Contact us
+                        <a wire:navigate href="{{ route('inquiries') }}" class="text-gray-400 hover:text-white transition">
+                            Contact Us
                         </a>
                     </li>
                 </ul>
@@ -133,7 +133,7 @@
                     <p class="text-gray-400 text-sm">
                         Copyright &copy; 2026.
                         All Rights Reserved. &mdash; Designed with love by
-                        <a href="#" class="text-white hover:text-red-400 transition">Felixson Adumeta</a>
+                        <a wire:navigate href="www.github.com/Cadustunna" class="text-white hover:text-red-400 transition">Felixson Adumeta</a>
                     </p>
                 </div>
     </div>

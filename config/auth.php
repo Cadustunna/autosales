@@ -36,18 +36,29 @@ return [
     */
 
     'guards' => [
-        'guards' => [
-            'web' => [
-                'driver' => 'session',
-                'provider' => 'users',
-            ],
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
 
-            'filament' => [
-                'driver' => 'session',
-                'provider' => 'users',
-            ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
         ],
     ],
+
+    'Providers' => [
+        'users'=> [
+            'driver'=> 'eloquent',
+            'model'=> APP\Models\User::class,
+        ],
+
+        'admin' => [
+            'driver'=> 'eloquent',
+            'model'=> APP\Models\Admin::class,
+        ],
+    ],
+
 
     /*
     |--------------------------------------------------------------------------

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Terms\Schemas;
+namespace App\Filament\Resources\Products\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
-class TermsForm
+class ProductForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -15,11 +14,11 @@ class TermsForm
             ->components([
                 TextInput::make('name')
                     ->required(),
-                Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
+                TextInput::make('description')
+                    ->required(),
                 FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->required(),
             ]);
     }
 }
