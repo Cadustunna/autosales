@@ -102,6 +102,25 @@
                                 <p>
                                     Check out some of the brands that we sell:
                                 </p>
+                                <div class="carousel">
+                                    <div class="group">
+                                        <div class="card">Toyota</div>
+                                        <div class="card">BMW</div>
+                                        <div class="card">Mercedez</div>
+                                        <div class="card">Nissan</div>
+                                        <div class="card">Ford</div>
+                                        <div class="card">Tesla</div>
+                                    </div>
+                                     <div aria-hidden class="group">
+                                        <div class="card">Toyota</div>
+                                        <div class="card">BMW</div>
+                                        <div class="card">Mercedez</div>
+                                        <div class="card">Nissan</div>
+                                        <div class="card">Ford</div>
+                                        <div class="card">Tesla</div>
+                                    </div>
+                                </div>   
+
                             </div>
                         </section>
                         <!-- /Available Brands -->

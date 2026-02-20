@@ -62,3 +62,39 @@ button[type="submit"]:is(.dark *) {
     background-color: #f91616cf !important;
 }
 
+.carousel{
+    margin:100px auto;
+    width: 90%;
+    display: flex;
+    overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 5s infinite linear;
+    padding-right: 1em;
+}
+
+.card{
+    flex: 0 0 5em;
+    height: 5rem;
+    width: 1em;
+    background-color: red;
+    font-size: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    align-content: center;
+    color: white;
+}
+
+@keyframes spin{
+    from {translate: 0;}
+    to {translate: -100%}
+}
