@@ -88,9 +88,103 @@
                         </button>
     </section>
     </div>
-    <div>
-        <h1 class="text-7xl font-bold text-center text-uppercase m-3">
-            This is Inquiries page
-        </h1>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="mb-6"> For purchases, orders or general inquires:</h1>
+        <p>Please fill in the form below to reach us now!</p>
+        @if (session()->has('success'))
+            <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form wire:submit="contactForm" action="#"
+            class="space-y-5 bg-white p-6 rounded-lg shadow m-8">
+            @csrf
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Full Name (Left) -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Full name</label>
+                    <input
+                        type="text"
+                        placeholder="John Doe"
+                            wire:model="name"
+                            class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none"
+                        >
+                        @error('name')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                </div>
+                <!-- Phone Number (Right) -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Phone number</label>
+                    <input
+                        type="text"
+                        placeholder="000-000-0000"
+                        wire:model="phone"
+                        class="w-full rounded-md border border-red-300 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none"
+                    >
+                    @error('phone')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">E-mail</label>
+                    <input
+                        type="email"
+                        placeholder="John@example.com"
+                        wire:model="email"
+                        class="w-full rounded-md border border-red-300 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none"
+                    >
+                    @error('email')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <!-- Inquiry Type -->
+                <div>
+                    <label class="block text-sm font-medium mb-1">Inquiry Type</label>
+                    <select
+                        wire:model="inquiry"
+                        class="w-full rounded-md border border-red-500 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none">
+                        <option value="" selected>Select-Inquiry-Type</option>
+                        <option value="" >General</option>
+                        <option value="" >Purchase</option>
+                        <option value="">Make an offer</option>
+                        <option value="">Test Drive</option>
+                    </select>
+                    @error('phone')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <!-- Message (Full Width) -->
+            <div>
+                <label class="block text-sm font-medium mb-1">Message</label>
+                <textarea
+                    wire:model="message"
+                    rows="5"
+                    placeholder="Type your message here..."
+                    class="w-full rounded-md border border-red-500 px-3 py-2 focus:border-red-400 focus:ring-1 focus:ring-red-400 outline-none"
+                ></textarea>
+                @error('message')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end">
+                <button
+                    type="submit"
+                    wire:confirm='Are you sure you want to make this inquiry?'
+                    class="rounded-md bg-red-600 px-6 py-2 text-white hover:bg-red-700 transition"
+                >
+                    Send
+                </button>
+            </div>
+        </form>
     </div>
 </div>

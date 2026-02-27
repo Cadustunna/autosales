@@ -119,7 +119,7 @@
                                         <div class="card">Ford</div>
                                         <div class="card">Tesla</div>
                                     </div>
-                                </div>   
+                                </div>
 
                             </div>
                         </section>
@@ -261,6 +261,38 @@
                                             </div>
                                         </div>
 
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <!-- Email -->
+                                            <div>
+                                                <label class="block text-sm font-medium mb-1">E-mail</label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="John@example.com"
+                                                    wire:model="email"
+                                                    class="w-full rounded-md border border-red-300 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none"
+                                                >
+                                                @error('email')
+                                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+                                            <!-- Inquiry Type -->
+                                            <div>
+                                                <label class="block text-sm font-medium mb-1">Inquiry Type</label>
+                                                <select
+                                                    wire:model="inquiry"
+                                                    class="w-full rounded-md border border-red-500 px-3 py-2 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none">
+                                                    <option selected>Select-Inquiry-Type</option>
+                                                    <option>General</option>
+                                                    <option>Purchase</option>
+                                                    <option>Make an offer</option>
+                                                    <option>Test drive</option>
+                                                </select>
+                                                @error('phone')
+                                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                        </div>
                                         <!-- Message (Full Width) -->
                                         <div>
                                             <label class="block text-sm font-medium mb-1">Message</label>
@@ -284,7 +316,6 @@
                                             >
                                                 Send
                                             </button>
-                                        </div>
                                         </div>
                                     </form>
                                 </div>
